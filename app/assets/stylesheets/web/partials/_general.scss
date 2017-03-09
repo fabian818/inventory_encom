@@ -1,0 +1,40 @@
+body{
+  background-color: $light_blue;
+  font-family: 'Nunito', sans-serif;
+}
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+
+  color: $grey;
+  background-color: $dark-green;
+  padding: 20px 20px 20px 20px;
+  .title{
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+
+footer{
+  display: flex;
+  flex-direction: row;
+
+  color: $grey;
+  background-color: $dark-green;
+  padding: 20px 20px 20px 20px;
+  .text{
+    align-self: flex-end;
+    max-width: 50%;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "inventary",
+  "authors": [
+    "Fabian Pierre Peña Jacobo <f.pena.jacobo@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "angular-local-storage": "^0.5.2",
+    "angular-route": "^1.5.8",
+    "chart.js": "^2.4.0",
+    "angular-animate": "^1.6.1"
+  }
+}

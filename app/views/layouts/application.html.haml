@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Inventary
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application'
+    = javascript_include_tag 'application'
+    %link{href: "https://fonts.googleapis.com/css?family=Nunito", rel: 'stylesheet'}
+  %body.site{"ng-app" => "app"}
+    %header
+      .title
+        Inventario Encom
+    .main
+      %ui-view
+    %footer
+      .text
+        All rights reserved - NoFearCode&reg;

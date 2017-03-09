@@ -1,0 +1,21 @@
+.home
+  .form__container
+    %form{'ng-submit' => 'vm.create()'}
+      %input{'ng-model' => 'vm.new_product.name', placeholder: 'Nombre del producto'}
+      %input{'ng-model' => 'vm.new_product.cost', placeholder: 'Costo'}
+      %input{'ng-model' => 'vm.new_product.price', placeholder: 'Precio'}
+      %input{'ng-model' => 'vm.new_product.quantity', placeholder: 'Cantidad inicial'}
+      %button
+        Agregar
+        %i.fa.fa-plus
+  .list
+    .title
+      .name Nombre
+      .cost Costo
+      .price Precio
+      .quantity Cantidad
+    .product{'ng-repeat' => 'product in vm.products'}
+      .name {{product.name}}
+      .cost {{product.cost}}
+      .price {{product.price}}
+      .quantity {{product.quantity}}

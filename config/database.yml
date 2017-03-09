@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: inventary_production
-  username: inventary
-  password: <%= ENV['INVENTARY_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE'] %>
+  host: <%= ENV['HOST'] %>
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>

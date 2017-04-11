@@ -23,7 +23,27 @@
         if (res.data.product !== null) {
           vm.products.push(res.data.product);
           resetInitialProduct();
+          swal({
+            title: 'Agregado correctamente',
+            type: 'success',
+            text: 'Se cerrará en 2 segundos...',
+            timer: 2000
+          }).then(
+          function () {},
+          function (dismiss) {
+            if (dismiss === 'timer') {
+              console.log('I was closed by the timer')
+            }
+          }
+          )
         }
+      }, function(err){
+        console.log(err);
+        errors = err.data.errors.reduce(function(err1, err2){
+          return err1 + '<br>' + err2;
+        });
+        console.log(errors);
+        swal('Error al agregar producto', errors, 'error');
       })
     }
 

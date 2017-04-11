@@ -12,5 +12,6 @@
  *
  *= require font-awesome
  *= require web/app
+ *= require sweetalert2/dist/sweetalert2.min.css
  *= require_self
  */

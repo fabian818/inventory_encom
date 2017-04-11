@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require sweetalert2/dist/sweetalert2.min.js
 //= require angular/angular
 //= require angular-animate/angular-animate.min.js
 //= require angular-route/angular-route

@@ -2,19 +2,24 @@
   angular.module('inventoryapp')
   .controller('HomeCtrl', HomeCtrl);  
 
-  HomeCtrl.$inject = ['ProductService'];
-  function HomeCtrl(ProductService) {
+  HomeCtrl.$inject = ['ProductService', '$timeout'];
+  function HomeCtrl(ProductService, $timeout) {
     var vm = this;
     vm.new_product = {
       'name': null,
       'cost': null,
       'price': null,
-      'quantity': null
+      'quantity': null,
+      'category_id': 1
     }
     vm.products = [];
 
     ProductService.index().then(function(res){
       vm.products = res.data.products;
+
+      $timeout(function() {
+        $(".chosen-select").chosen({no_results_text: "Ups!, no hay resultados para: "});
+      }, 100);
     })
 
     vm.create = function(){

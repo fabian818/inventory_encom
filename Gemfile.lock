@@ -80,6 +80,7 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    hashie (3.5.5)
     html2haml (2.1.0)
       erubis (~> 2.7.0)
       haml (~> 4.0)
@@ -110,6 +111,9 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    omniauth (1.6.1)
+      hashie (>= 3.4.6, < 3.6.0)
+      rack (>= 1.6.2, < 3)
     orm_adapter (0.5.0)
     pg (0.19.0)
     puma (3.7.1)
@@ -208,6 +212,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  omniauth
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.2)

@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require sweetalert2/dist/sweetalert2.min.js
 //= require angular/angular
+//= require angular-cookie/angular-cookie.min.js
+//= require ng-token-auth/dist/ng-token-auth.min.js
 //= require angular-animate/angular-animate.min.js
 //= require angular-route/angular-route
 //= require angular-ui-router

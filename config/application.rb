@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Inventary
     class Application < Rails::Application
-        onfig.middleware.use Rack::Cors do
+        config.middleware.use Rack::Cors do
             allow do
                 origins '*'
                 resource '*',

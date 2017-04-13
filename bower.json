@@ -15,6 +15,8 @@
     "angular-route": "^1.5.8",
     "chart.js": "^2.4.0",
     "angular-animate": "^1.6.1",
-    "sweetalert2": "^6.6.0"
+    "sweetalert2": "^6.6.0",
+    "ng-token-auth": "^0.0.29",
+    "angular-cookie": "^4.1.0"
   }
 }

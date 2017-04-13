@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
+  default_url_options :host => "example.com"
   namespace :api do
+    mount_devise_token_auth_for 'User', at: 'auth'
     get 'products/index'
   end
 

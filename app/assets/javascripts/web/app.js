@@ -4,8 +4,9 @@
     'ngRoute',
     'ui.router',
     'templates',
-    'ngAnimate'])
-  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    'ngAnimate',
+    'ng-token-auth'])
+  .config(['$stateProvider', '$authProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $authProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
     .state('home', {
       url: '/',
@@ -14,6 +15,18 @@
       controllerAs: 'vm',
       authenticate: true,
       revoke: false
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'login.html',
+      controller: 'LoginCtrl',
+      controllerAs: 'vm',
+      authenticate: true,
+      revoke: false
+    });
+
+    $authProvider.configure({
+      apiUrl: '/api'
     });
 
     $urlRouterProvider.otherwise('/');

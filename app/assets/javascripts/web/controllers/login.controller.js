@@ -1,19 +1,23 @@
 (function() {
-  angular.module('app')
+  angular.module('myapp')
   .controller('LoginCtrl', LoginCtrl);  
 
-  LoginCtrl.$inject = ['$auth'];
-  function LoginCtrl($auth) {
+  LoginCtrl.$inject = ['$auth', '$state'];
+  function LoginCtrl($auth, $state) {
     var vm = this;
-    vm.register = function(){
-      $auth.submitRegistration({
-        email:                 'nexus@wsnpro.com',
-        password:              '123123123',
-        password_confirmation: '123123123',
-        favorite_color:        'red'
-      }).then(function(res){
-        console.log(res);
-      });
+    vm.user = {
+      email: '',
+      password: ''
+    }
+    vm.login = function(){
+      console.log('esto funciona');
+      $auth.submitLogin(vm.user)
+        .then(function(resp) {
+          $state.go('home');
+        })
+        .catch(function(resp) {
+          console.log('todo mal')
+        });
     }
   }
 })();

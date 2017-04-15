@@ -1,5 +1,5 @@
 (function() {
-  angular.module('app')
+  angular.module('myapp')
   .controller('HomeCtrl', HomeCtrl);  
 
   HomeCtrl.$inject = ['ProductService'];

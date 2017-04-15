@@ -1,28 +1,45 @@
 (function() {
   'use strict';
-  angular.module('app', ['LocalStorageModule',
+  angular.module('myapp', ['LocalStorageModule',
     'ngRoute',
     'ui.router',
     'templates',
-    'ngAnimate',
     'ng-token-auth'])
   .config(['$stateProvider', '$authProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $authProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
     .state('home', {
-      url: '/',
+      url: '/home',
       templateUrl: 'home.html',
       controller: 'HomeCtrl',
       controllerAs: 'vm',
-      authenticate: true,
-      revoke: false
+      resolve: {
+        auth: authenticateRoute
+      }
     })
     .state('login', {
       url: '/login',
       templateUrl: 'login.html',
       controller: 'LoginCtrl',
-      controllerAs: 'vm',
-      authenticate: true,
-      revoke: false
+      controllerAs: 'vm'
+    })
+    .state('landing', {
+      url: '/',
+      templateUrl: 'landing.html',
+      controller: 'LandingCtrl',
+      controllerAs: 'vm'
+    });
+    function authenticateRoute($auth, $state) {
+      return $auth.validateUser()
+      .catch(function(res) {
+        $state.go('landing');
+      });
+    }
+
+    $stateProvider.state('user-profile', {
+      url: '/users',
+      resolve: {
+        auth: authenticateRoute
+      }
     });
 
     $authProvider.configure({

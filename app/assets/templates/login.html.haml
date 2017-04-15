@@ -1,5 +1,10 @@
-%h1
-  Hola
-%form{'ng-submit' => 'vm.register()'}
-  %input
-  %input{type: 'submit'}
+.login
+  %form{'ng-submit' => "vm.login()", role: "form"}
+    .title
+      Bienvenido
+    %label{for: 'email'} Email
+    %input{type: 'email', name: 'email', 'ng-model' => 'vm.user.email', required: true, placeholder: 'Email'}
+    %label{for: 'password'} Password
+    %input{type: 'password', name: 'password', 'ng-model' => 'vm.user.password', required: true, placeholder: 'Contraseña'}
+
+    %button{type: 'submit'} Ingresar

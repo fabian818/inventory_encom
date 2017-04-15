@@ -7,10 +7,13 @@
     = stylesheet_link_tag    'application'
     = javascript_include_tag 'application'
     %link{href: "https://fonts.googleapis.com/css?family=Nunito", rel: 'stylesheet'}
-  %body.site{"ng-app" => "app"}
+  %body.site{"ng-app" => "myapp"}
     %header
       .title
         Inventario Encom
+      .right
+        .right__item{'ng-if' => 'user.signedIn'}
+          %a{'ng-click' => 'signOut()'} Cerrar sesión
     .main
       %ui-view
     %footer

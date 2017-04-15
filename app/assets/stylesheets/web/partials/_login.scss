@@ -1,0 +1,31 @@
+.login{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+
+  form{
+    display: flex;
+    flex-direction: column;
+    background-color: $dark_green;
+    padding: 30px 50px 50px 50px;
+    color: white;
+    .title{
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    label{
+      font-size: 14px;
+    }
+
+    input{
+      margin-top: 10px;
+    }
+    button{
+      margin-top: 20px;
+      padding: 10px 0 10px 0;
+    }
+  }
+}

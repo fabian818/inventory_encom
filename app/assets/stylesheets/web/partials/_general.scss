@@ -1,6 +1,37 @@
 body{
   background-color: $light_blue;
   font-family: 'Nunito', sans-serif;
+  ::-webkit-input-placeholder { color: $light-green; } /* WebKit */
+  :-moz-placeholder { color: $grey; } /* Firefox 18- */
+  ::-moz-placeholder { color: $grey; } /* Firefox 19+ */
+}
+a{
+  cursor: pointer;
+}
+input{
+  color: $white;
+  ox-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 200px;
+  padding: 7px;
+  border: none;
+  border-color: $light-green;
+  border-bottom: 1px solid $light-green;
+  background: transparent;
+  margin-bottom: 10px;
+  height: 45px;
+}
+
+button{
+  font-weight: bold;
+  border: none;
+  color: $white;
+  background-color: $light-green;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .site {
   display: flex;
@@ -20,8 +51,14 @@ header{
   background-color: $dark-green;
   padding: 20px 20px 20px 20px;
   .title{
+    width: 50%;
     font-weight: bold;
     font-size: 30px;
+  }
+  .right{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
   }
 }
 

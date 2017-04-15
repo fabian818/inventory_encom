@@ -14,12 +14,11 @@
 //= require jquery_ujs
 //= require sweetalert2/dist/sweetalert2.min.js
 //= require angular/angular
+//= require angular-ui-router/release/angular-ui-router.min.js
+//= require angular-route/angular-route.min.js
+//= require angular-local-storage/dist/angular-local-storage
 //= require angular-cookie/angular-cookie.min.js
 //= require ng-token-auth/dist/ng-token-auth.min.js
-//= require angular-animate/angular-animate.min.js
-//= require angular-route/angular-route
-//= require angular-ui-router
-//= require angular-local-storage/dist/angular-local-storage
 //= require angular-rails-templates
 //= require_tree ../templates
 //= require_tree .

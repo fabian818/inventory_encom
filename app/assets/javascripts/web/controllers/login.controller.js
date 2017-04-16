@@ -16,7 +16,10 @@
         $state.go('home');
       })
       .catch(function(resp) {
-        console.log('todo mal')
+        errors = resp.errors.reduce(function(err1, err2){
+          return err1 + '<br>' + err2;
+        });
+        swal('Error al ingresar', errors, 'error');
       });
     }
   }

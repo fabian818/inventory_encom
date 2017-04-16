@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
     after_create :create_category
 
     def create_category
-        self.categories.create(name: 'Varios')
+        self.categories.create(name: 'Categoría general')
     end
 end

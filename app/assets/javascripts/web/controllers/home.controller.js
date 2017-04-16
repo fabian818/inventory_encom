@@ -10,7 +10,7 @@
       'cost': null,
       'price': null,
       'quantity': null,
-      'category_id': '1'
+      'category_id': null
     }
     vm.products = [];
     vm.categories = [];
@@ -19,6 +19,7 @@
       vm.products = res.data.products;
       vm.categories = res.data.categories;
       console.log(vm.categories);
+      vm.new_product.category_id = vm.categories[0].id
     })
 
     vm.create = function(){

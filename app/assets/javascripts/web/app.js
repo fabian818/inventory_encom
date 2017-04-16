@@ -13,7 +13,13 @@
       controller: 'HomeCtrl',
       controllerAs: 'vm',
       resolve: {
-        auth: authenticateRoute
+        auth: function($auth, $state) {
+          return $auth.validateUser()
+          .catch(function(res) {
+            $state.go('landing');
+          });
+        }
+
       }
     })
     .state('login', {
@@ -28,19 +34,7 @@
       controller: 'LandingCtrl',
       controllerAs: 'vm'
     });
-    function authenticateRoute($auth, $state) {
-      return $auth.validateUser()
-      .catch(function(res) {
-        $state.go('landing');
-      });
-    }
 
-    $stateProvider.state('user-profile', {
-      url: '/users',
-      resolve: {
-        auth: authenticateRoute
-      }
-    });
 
     $authProvider.configure({
       apiUrl: '/api'

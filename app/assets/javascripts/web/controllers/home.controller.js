@@ -10,7 +10,7 @@
       'cost': null,
       'price': null,
       'quantity': null,
-      'category_id': 1
+      'category_id': '1'
     }
     vm.products = [];
     vm.categories = [];

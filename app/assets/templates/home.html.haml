@@ -8,7 +8,7 @@
       %select.form-control{'ng-model' => 'vm.category_id'}
         %option{"value"=>""}
           Seleccione la categoría
-        %option{"ng-repeat"=>"category in vm.categories"}
+        %option{"ng-repeat"=>"category in vm.categories", "ng-value"=>"category.id"}
           {{category.name}}
       %button
         Agregar
@@ -25,4 +25,4 @@
       .cost {{product.cost}}
       .price {{product.price}}
       .quantity {{product.quantity}}
-      .category Categoría
+      .category {{product.category.name}}

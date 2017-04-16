@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 gem 'omniauth'
+gem 'rabl-rails'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'devise_token_auth'
 # See https://github.com/rails/execjs#readme for more supported runtimes

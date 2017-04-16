@@ -9,10 +9,10 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "angular": "^1.5.8",
+    "angular": "1.6.1",
     "angular-ui-router": "^0.3.1",
     "angular-local-storage": "^0.5.2",
-    "angular-route": "^1.5.8",
+    "angular-route": "1.6.1",
     "chart.js": "^2.4.0",
     "angular-animate": "^1.6.1",
     "sweetalert2": "^6.6.0",

@@ -1,8 +1,9 @@
 class Api::ProductsController < ApplicationController
     before_action :authenticate_api_user!
     def index
-        @products = current_api_user.products.all
-        render json: {products: @products}
+        @products = current_api_user.products
+        @categories = current_api_user.categories
+        render json: {products: @products, categories: @categories}
     end
 
     def create

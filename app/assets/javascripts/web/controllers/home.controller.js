@@ -13,9 +13,12 @@
       'category_id': 1
     }
     vm.products = [];
+    vm.categories = [];
 
     ProductService.index().then(function(res){
       vm.products = res.data.products;
+      vm.categories = res.data.categories;
+      console.log(vm.categories);
     })
 
     vm.create = function(){

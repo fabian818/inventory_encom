@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
     belongs_to :user
+    belongs_to :category
 
     before_validation :set_columns
     after_validation :set_round

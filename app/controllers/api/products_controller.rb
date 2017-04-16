@@ -1,14 +1,16 @@
 class Api::ProductsController < ApplicationController
+    respond_to :json
     before_action :authenticate_api_user!
     def index
-        @products = current_api_user.products.all
-        render json: {products: @products}
+        @products = current_api_user.products
+        @categories = current_api_user.categories
+        # render json: {products: @products, categories: @categories}
     end
 
     def create
         @product = current_api_user.products.new(product_params)
         if @product.save
-            render json: {product: @product, errors: nil}, status: 200
+            respond_with(@product)
         else
             render json: {product: nil, errors: @product.errors.values.flatten}, status: 400
         end
@@ -22,6 +24,6 @@ class Api::ProductsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:name, :cost, :price, :quantity)
+        params.require(:product).permit(:name, :cost, :price, :quantity, :category_id)
     end
 end

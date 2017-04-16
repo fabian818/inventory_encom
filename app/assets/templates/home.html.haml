@@ -5,6 +5,11 @@
       %input{'ng-model' => 'vm.new_product.cost', placeholder: 'Costo'}
       %input{'ng-model' => 'vm.new_product.price', placeholder: 'Precio'}
       %input{'ng-model' => 'vm.new_product.quantity', placeholder: 'Cantidad inicial'}
+      %select.form-control{'ng-model' => 'vm.category_id'}
+        %option{"value"=>""}
+          Seleccione la categoría
+        %option{"ng-repeat"=>"category in vm.categories", "ng-value"=>"category.id"}
+          {{category.name}}
       %button
         Agregar
         %i.fa.fa-plus
@@ -14,8 +19,10 @@
       .cost Costo
       .price Precio
       .quantity Cantidad
+      .category Categoría
     .product{'ng-repeat' => 'product in vm.products'}
       .name {{product.name}}
       .cost {{product.cost}}
       .price {{product.price}}
       .quantity {{product.quantity}}
+      .category {{product.category.name}}

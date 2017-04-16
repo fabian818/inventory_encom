@@ -17,6 +17,7 @@
     "angular-animate": "^1.6.1",
     "sweetalert2": "^6.6.0",
     "ng-token-auth": "^0.0.29",
-    "angular-cookie": "^4.1.0"
+    "angular-cookie": "^4.1.0",
+    "bootstrap-sass": "^3.3.7"
   }
 }

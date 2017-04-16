@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   default_url_options :host => "example.com"
   namespace :api do
     mount_devise_token_auth_for 'User', at: 'auth'
-    get 'products/index'
   end
 
-  namespace :api do
+  namespace :api, defaults: { format: :json } do
     post 'products/create'
+    get 'products/index'
   end
 
   namespace :api do

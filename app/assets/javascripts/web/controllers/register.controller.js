@@ -14,7 +14,12 @@
       console.log('esto funciona');
       $auth.submitRegistration(vm.user)
       .then(function(resp) {
-        swal('¡Todo listo!', 'Registrado correctamente', 'success');
+        swal('¡Todo listo!', 'Registrado correctamente', 'success').then(function(){          
+          $auth.submitLogin(vm.user)
+          .then(function(resp) {
+            $state.go('home');
+          })
+        })
       })
       .catch(function(resp) {
         console.log(resp)

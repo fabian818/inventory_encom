@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require chosen/chosen.jquery.min.js
 //= require sweetalert2/dist/sweetalert2.min.js
 //= require angular/angular
 //= require angular-ui-router/release/angular-ui-router.min.js
@@ -21,7 +20,6 @@
 //= require angular-cookie/angular-cookie.min.js
 //= require ng-token-auth/dist/ng-token-auth.min.js
 //= require angular-rails-templates
-//= require angular-sanitize/angular-sanitize.min.js
 //= require_tree ../templates
 //= require_tree .
 

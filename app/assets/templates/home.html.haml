@@ -5,7 +5,7 @@
       %input{'ng-model' => 'vm.new_product.cost', placeholder: 'Costo'}
       %input{'ng-model' => 'vm.new_product.price', placeholder: 'Precio'}
       %input{'ng-model' => 'vm.new_product.quantity', placeholder: 'Cantidad inicial'}
-      %select.chosen-select{'style' => "width:200px;", 'data-placeholder' => 'Escoger una categoría', 'ng-model' => 'vm.new_product.category_id'}
+      %select{class: 'form-control'}
         %option{value: "AK"} Alaska
         %option{value: "AK"} Alaska
         %option{value: "AK"} Alaska

@@ -14,35 +14,6 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      input{
-        color: $white;
-        ox-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        outline: none;
-        display: block;
-        width: 200px;
-        padding: 7px;
-        border: none;
-        border-color: $light-green;
-        border-bottom: 1px solid $light-green;
-        background: transparent;
-        margin-bottom: 10px;
-        height: 45px;
-      }
-      div{        
-        width: 200px;
-        padding: 7px;
-        height: 45px;
-      }
-      button{
-        font-weight: bold;
-        border: none;
-        color: $white;
-        background-color: $light-green;
-        border-radius: 5px;
-        cursor: pointer;
-      }
     }
   }
   .list{

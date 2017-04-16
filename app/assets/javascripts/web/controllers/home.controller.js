@@ -16,10 +16,6 @@
 
     ProductService.index().then(function(res){
       vm.products = res.data.products;
-
-      $timeout(function() {
-        $(".chosen-select").chosen({no_results_text: "Ups!, no hay resultados para: "});
-      }, 100);
     })
 
     vm.create = function(){

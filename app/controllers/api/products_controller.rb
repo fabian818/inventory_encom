@@ -1,6 +1,7 @@
 class Api::ProductsController < ApplicationController
     respond_to :json
     before_action :authenticate_api_user!
+    before_action :set_product, only: [:update, :destroy]
     def index
         @products = current_api_user.products
         @categories = current_api_user.categories
@@ -20,9 +21,14 @@ class Api::ProductsController < ApplicationController
     end
 
     def destroy
+        @product.destroy
+        render json: {destroyed: true}
     end
 
     private
+    def set_product
+        @product = Product.find(params[:id])
+    end
     def product_params
         params.require(:product).permit(:name, :cost, :price, :quantity, :category_id)
     end

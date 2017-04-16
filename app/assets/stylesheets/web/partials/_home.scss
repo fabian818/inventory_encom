@@ -33,6 +33,7 @@
     color: $white;    
     background-color: $dark-blue;
     padding: 20px 20px 20px 20px;
+    margin-bottom:30px;
     border-radius: 5px;
     .product{
       display: flex;
@@ -40,6 +41,15 @@
       div{
         width: 25%;
         text-align: center;
+      }
+      .options{
+        i{
+          margin-right: 10px;
+          cursor: pointer;
+        }
+      }
+      &:hover{        
+        background-color: $light-blue;
       }
     }
     .title{

@@ -20,9 +20,13 @@
       .price Precio
       .quantity Cantidad
       .category Categoría
+      .options Opciones
     .product{'ng-repeat' => 'product in vm.products'}
       .name {{product.name}}
       .cost {{product.cost}}
       .price {{product.price}}
       .quantity {{product.quantity}}
       .category {{product.category.name}}
+      .options
+        %i.fa.fa-times.red{'ng-click' => 'vm.destroy(product.id)'}
+        %i.fa.fa-pencil-square-o

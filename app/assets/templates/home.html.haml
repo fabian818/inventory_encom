@@ -28,5 +28,5 @@
       .quantity {{product.quantity}}
       .category {{product.category.name}}
       .options
-        %i.fa.fa-times.red
+        %i.fa.fa-times.red{'ng-click' => 'vm.destroy(product.id)'}
         %i.fa.fa-pencil-square-o

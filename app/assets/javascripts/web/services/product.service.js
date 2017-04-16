@@ -11,6 +11,7 @@
 
         service.index = index;
         service.create = create;
+        service.destroy = destroy;
         return service;
 
         function index() {
@@ -20,6 +21,14 @@
         function create(product){
             return $http.post('/api/products/create', {
                 product: product
+            })
+        }
+
+        function destroy(product_id){
+            return $http.delete('/api/products/destroy', {
+                params: {
+                    id: product_id
+                }
             })
         }
     }

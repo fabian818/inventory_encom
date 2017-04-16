@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     post 'products/create'
     get 'products/index'
+    delete 'products/destroy'
   end
 
   namespace :api do

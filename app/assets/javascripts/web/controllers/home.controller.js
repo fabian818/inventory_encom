@@ -51,6 +51,30 @@
         swal('Error al agregar producto', errors, 'error');
       })
     }
+    vm.destroy = function(product_id){
+      swal({
+        title: '¿Estás seguro(a)?',
+        text: "Una vez borrado no se puede recuperar",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, borrar', 
+        cancelButtonText: 'Cancelar'
+      }).then(function () {
+        ProductService.destroy(product_id).then(function(res){
+          console.log(res);
+          if (res.data.destroyed === true) {            
+            swal(
+              '¡Borrado!',
+              'El producto ha sido borrado con éxito.',
+              'success'
+              )
+          }
+        })
+
+      })
+    }
 
     function resetInitialProduct(){
       vm.new_product = {

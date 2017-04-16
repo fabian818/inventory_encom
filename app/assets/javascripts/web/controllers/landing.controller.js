@@ -1,5 +1,5 @@
 (function() {
-  angular.module('myapp')
+  angular.module('inventoryapp')
   .controller('LandingCtrl', LandingCtrl);  
 
   LandingCtrl.$inject = ['$auth'];

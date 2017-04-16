@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('myapp', ['LocalStorageModule',
+  angular.module('inventoryapp', ['LocalStorageModule',
     'ngRoute',
     'ui.router',
     'templates',

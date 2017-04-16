@@ -5,7 +5,7 @@
       %input{'ng-model' => 'vm.new_product.cost', placeholder: 'Costo'}
       %input{'ng-model' => 'vm.new_product.price', placeholder: 'Precio'}
       %input{'ng-model' => 'vm.new_product.quantity', placeholder: 'Cantidad inicial'}
-      %select.form-control{'ng-model' => 'vm.category_id'}
+      %select{'ng-model' => 'vm.new_product.category_id'}
         %option{"value"=>""}
           Seleccione la categoría
         %option{"ng-repeat"=>"category in vm.categories", "ng-value"=>"category.id"}

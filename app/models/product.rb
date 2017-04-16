@@ -1,10 +1,11 @@
 class Product < ApplicationRecord
     belongs_to :user
-    belongs_to :category
+    belongs_to :category, optional: true
 
     before_validation :set_columns
     after_validation :set_round
     validates :name, presence: {message: 'El producto debe tener un nombre'}
+    validates :category_id, presence: {message: 'El producto debe pertenecer a una categoría'}
     validates :price, numericality: {message: 'El precio debe ser numérico'}
     validates :cost, numericality: {message: 'El costo debe ser numérico'}
     validates :quantity, numericality: {message: 'La cantidad debe ser numérica y entera', only_integer: true}

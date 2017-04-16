@@ -10,3 +10,6 @@
     %input{type: 'password', name: 'password', 'ng-model' => 'vm.user.password_confirmation', required: true, placeholder: 'Contraseña'}
 
     %button{type: 'submit'} Registrar
+
+    .links
+      %a{'ui-sref' => 'login'} ¿Ya tiene una cuenta? Ingrese

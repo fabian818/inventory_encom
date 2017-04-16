@@ -14,12 +14,14 @@
       console.log('esto funciona');
       $auth.submitRegistration(vm.user)
       .then(function(resp) {
-        console.log('registrado correctamente');
-        console.log(resp);
+        swal('¡Todo listo!', 'Registrado correctamente', 'success');
       })
       .catch(function(resp) {
-        console.log('error en el registro');
-        console.log(resp);
+        console.log(resp)
+        errors = resp.data.errors.full_messages.reduce(function(err1, err2){
+          return err1 + '<br>' + err2;
+        });
+        swal('Error al ingresar', errors, 'error');
       });
     }
   }

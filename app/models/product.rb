@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+    belongs_to :user
+
     before_validation :set_columns
     after_validation :set_round
     validates :name, presence: {message: 'El producto debe tener un nombre'}

@@ -1,12 +1,12 @@
 class Api::ProductsController < ApplicationController
     before_action :authenticate_api_user!
     def index
-        @products = Product.all
+        @products = current_api_user.products.all
         render json: {products: @products}
     end
 
     def create
-        @product = Product.new(product_params)
+        @product = current_api_user.products.new(product_params)
         if @product.save
             render json: {product: @product, errors: nil}, status: 200
         else

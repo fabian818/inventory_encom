@@ -64,7 +64,10 @@
       }).then(function () {
         ProductService.destroy(product_id).then(function(res){
           console.log(res);
-          if (res.data.destroyed === true) {            
+          if (res.data.destroyed === true) {
+            var deleted = vm.products.find_by(product_id, 'id')[0];
+            console.log(vm.products.indexOf(deleted));
+            vm.products.splice(vm.products.indexOf(deleted),1);
             swal(
               '¡Borrado!',
               'El producto ha sido borrado con éxito.',

@@ -1,7 +1,7 @@
 (function() {
   "use strict";
 
-  angular.module('myapp')
+  angular.module('inventoryapp')
   .run(RunConfig);
 
   RunConfig.$inject = ['localStorageService', '$rootScope', '$state', '$http', '$window'];

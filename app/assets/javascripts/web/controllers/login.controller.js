@@ -12,12 +12,12 @@
     vm.login = function(){
       console.log('esto funciona');
       $auth.submitLogin(vm.user)
-        .then(function(resp) {
-          $state.go('home');
-        })
-        .catch(function(resp) {
-          console.log('todo mal')
-        });
+      .then(function(resp) {
+        $state.go('home');
+      })
+      .catch(function(resp) {
+        console.log('todo mal')
+      });
     }
   }
 })();

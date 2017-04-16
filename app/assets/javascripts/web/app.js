@@ -5,8 +5,7 @@
     'ui.router',
     'templates',
     'ng-token-auth'])
-  .config(['$qProvider', '$stateProvider', '$authProvider', '$urlRouterProvider', '$locationProvider', function ($qProvider, $stateProvider, $authProvider, $urlRouterProvider, $locationProvider) {
-    $qProvider. errorOnUnhandledRejections (false);
+  .config(['$stateProvider', '$authProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $authProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
     .state('home', {
       url: '/home',

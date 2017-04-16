@@ -33,6 +33,17 @@ input{
   height: 45px;
 }
 
+
+select{
+  border-radius: 5px !important;
+  background-color: $light-green;
+  border-color: $light-green;
+  color: white;
+  &:focus{
+    outline: none;
+  }
+}
+
 button{
   font-weight: bold;
   border: none;

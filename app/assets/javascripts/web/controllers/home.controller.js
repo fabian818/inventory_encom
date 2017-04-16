@@ -14,6 +14,7 @@
     }
     vm.products = [];
     vm.categories = [];
+    vm.edit_product = null;
 
     ProductService.index().then(function(res){
       vm.products = res.data.products;
@@ -77,6 +78,12 @@
         })
 
       })
+    }
+
+    vm.update = function(product){
+      vm.edit_product = product;
+      var inst = $('[data-remodal-id=modal]').remodal();      
+      inst.open();
     }
 
     function resetInitialProduct(){

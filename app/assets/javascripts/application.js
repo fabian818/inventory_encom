@@ -19,6 +19,7 @@
 //= require angular-local-storage/dist/angular-local-storage
 //= require angular-cookie/angular-cookie.min.js
 //= require ng-token-auth/dist/ng-token-auth.min.js
+//= require remodal/dist/remodal.min.js
 //= require angular-rails-templates
 //= require_tree ../templates
 //= require_tree .

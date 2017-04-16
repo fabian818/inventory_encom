@@ -1,0 +1,15 @@
+.login
+  %form{'ng-submit' => "vm.register()", role: "form"}
+    .title
+      Bienvenido
+    %label{for: 'email'} Email
+    %input{type: 'email', name: 'email', 'ng-model' => 'vm.user.email', required: true, placeholder: 'Email'}
+    %label{for: 'password'} Password
+    %input{type: 'password', name: 'password', 'ng-model' => 'vm.user.password', required: true, placeholder: 'Contraseña'}
+    %label{for: 'password'} Password Confirmation
+    %input{type: 'password', name: 'password', 'ng-model' => 'vm.user.password_confirmation', required: true, placeholder: 'Contraseña'}
+
+    %button{type: 'submit'} Registrar
+
+    .links
+      %a{'ui-sref' => 'login'} ¿Ya tiene una cuenta? Ingrese

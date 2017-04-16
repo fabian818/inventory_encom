@@ -5,6 +5,11 @@ body{
   :-moz-placeholder { color: $grey; } /* Firefox 18- */
   ::-moz-placeholder { color: $grey; } /* Firefox 19+ */
 }
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px $dark_green inset;
+  -webkit-text-fill-color: white !important;
+}
 a{
   cursor: pointer;
 }

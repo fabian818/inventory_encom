@@ -28,6 +28,12 @@
       controller: 'LoginCtrl',
       controllerAs: 'vm'
     })
+    .state('register', {
+      url: '/registro',
+      templateUrl: 'register.html',
+      controller: 'RegisterCtrl',
+      controllerAs: 'vm'
+    })
     .state('landing', {
       url: '/',
       templateUrl: 'landing.html',

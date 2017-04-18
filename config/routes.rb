@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post 'products/create'
     get 'products/index'
     delete 'products/destroy'
+    put 'products/update'
   end
 
   namespace :api do

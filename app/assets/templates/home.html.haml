@@ -1,6 +1,20 @@
 .home
   .form__container
-    %my-customer{'product' => 'vm.new_product'}
+    .title
+      Nuevo producto
+    %form{'ng-submit' => 'vm.create()'}
+      %input{'ng-model' => 'vm.new_product.name', placeholder: 'Nombre del producto'}
+      %input{'ng-model' => 'vm.new_product.cost', placeholder: 'Costo'}
+      %input{'ng-model' => 'vm.new_product.price', placeholder: 'Precio'}
+      %input{'ng-model' => 'vm.new_product.quantity', placeholder: 'Cantidad inicial'}
+      %select{'ng-model' => 'vm.new_product.category_id'}
+        %option{"value"=>""}
+          Seleccione la categoría
+        %option{"ng-repeat"=>"category in vm.categories", "ng-value"=>"category.id"}
+          {{category.name}}
+      %button
+        Agregar
+        %i.fa.fa-plus
   .list
     .title
       .name Nombre
@@ -17,8 +31,25 @@
       .select {{product.category.name}}
       .options
         %i.fa.fa-times.red{'ng-click' => 'vm.destroy(product.id)'}
-        %i.fa.fa-pencil-square-o{'ng-click' => 'vm.update(product)'}
+        %i.fa.fa-pencil-square-o{'ng-click' => 'vm.select_product(product)'}
   
 .modal
   .modal__container
-    %my-customer
+    .modal__container__close
+      %i.fa.fa-times{'ng-click' => 'vm.close()'}
+    .modal__container__body
+      .title
+        Editar producto
+      %form{'ng-submit' => 'vm.update()'}
+        %input{'ng-model' => 'vm.edit_product.name', placeholder: 'Nombre del producto'}
+        %input{'ng-model' => 'vm.edit_product.cost', placeholder: 'Costo'}
+        %input{'ng-model' => 'vm.edit_product.price', placeholder: 'Precio'}
+        %input{'ng-model' => 'vm.edit_product.quantity', placeholder: 'Cantidad inicial'}
+        %select{'ng-model' => 'vm.edit_product.category_id'}
+          %option{"value"=>""}
+            Seleccione la categoría
+          %option{"ng-repeat"=>"category in vm.categories", "ng-value"=>"category.id"}
+            {{category.name}}
+        %button
+          Actualizar
+          %i.fa.fa-plus

@@ -12,6 +12,7 @@
         service.index = index;
         service.create = create;
         service.destroy = destroy;
+        service.update = update;
         return service;
 
         function index() {
@@ -29,6 +30,13 @@
                 params: {
                     id: product_id
                 }
+            })
+        }
+
+        function update(product){
+            return $http.put('/api/products/update', {
+                id: product.id,
+                product: product
             })
         }
     }

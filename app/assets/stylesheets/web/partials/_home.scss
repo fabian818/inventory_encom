@@ -10,6 +10,9 @@
     background-color: $dark-blue;
     padding: 20px 20px 20px 20px;
     border-radius: 5px;
+    .title{
+      color: white;
+    }
     form{
       display: flex;
       flex-direction: row;

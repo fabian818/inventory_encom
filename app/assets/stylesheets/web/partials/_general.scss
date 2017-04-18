@@ -97,7 +97,8 @@ footer{
 }
 
 .modal{
-  display: flex;
+  display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -109,8 +110,22 @@ footer{
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
   &__container{
-    padding: 50px 50px 50px 50px;
-    margin: 50px 50px 50px 50px;
+    &__close{
+      color: white;
+      cursor: pointer;
+      float: right;
+      padding: 30px 30px;
+      font-size: 25px;
+      &:hover{        
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+      }
+    }
+    &__body{     
+      padding: 30px 30px 30px 30px;
+      margin: 30px 30px 30px 30px;
+    }
     min-width: 50%;
     min-height: 50%;
     background-color: $dark-blue;

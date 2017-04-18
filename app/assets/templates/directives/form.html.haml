@@ -1,0 +1,16 @@
+%div
+  .title
+    {{title}}
+  %form{'ng-submit' => 'vm.create()'}
+    %input{'ng-model' => 'product.name', placeholder: 'Nombre del producto'}
+    %input{'ng-model' => 'product.cost', placeholder: 'Costo'}
+    %input{'ng-model' => 'product.price', placeholder: 'Precio'}
+    %input{'ng-model' => 'product.quantity', placeholder: 'Cantidad inicial'}
+    %select{'ng-model' => 'product.category_id'}
+      %option{"value"=>""}
+        Seleccione la categoría
+      %option{"ng-repeat"=>"category in vm.categories", "ng-value"=>"category.id"}
+        {{category.name}}
+    %button
+      Agregar
+      %i.fa.fa-plus

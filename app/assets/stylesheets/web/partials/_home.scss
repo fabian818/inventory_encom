@@ -10,19 +10,13 @@
     background-color: $dark-blue;
     padding: 20px 20px 20px 20px;
     border-radius: 5px;
+    .title{
+      color: white;
+    }
     form{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      select{
-        border-radius: 5px !important;
-        background-color: $light-green;
-        border-color: $light-green;
-        color: white;
-        &:focus{
-          outline: none;
-        }
-      }
     }
   }
   .list{
@@ -67,6 +61,26 @@
         width: 25%;
         text-align: center;
       }
+    }
+  }
+}
+.modal__container{
+  .title{
+    color: white;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    input{
+      width: 100%;
+    }
+    select{
+      height: 40px;
+      margin-bottom: 20px;
+    }
+    button{
+      height: 40px;
     }
   }
 }

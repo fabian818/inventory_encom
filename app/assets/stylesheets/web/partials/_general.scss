@@ -33,6 +33,17 @@ input{
   height: 45px;
 }
 
+
+select{
+  border-radius: 5px !important;
+  background-color: $light-green;
+  border-color: $light-green;
+  color: white;
+  &:focus{
+    outline: none;
+  }
+}
+
 button{
   font-weight: bold;
   border: none;
@@ -82,5 +93,41 @@ footer{
     align-self: flex-end;
     max-width: 50%;
     margin-left: auto;
+  }
+}
+
+.modal{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  &__container{
+    &__close{
+      color: white;
+      cursor: pointer;
+      float: right;
+      padding: 30px 30px;
+      font-size: 25px;
+      &:hover{        
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+      }
+    }
+    &__body{     
+      padding: 30px 30px 30px 30px;
+      margin: 30px 30px 30px 30px;
+    }
+    min-width: 50%;
+    min-height: 50%;
+    background-color: $dark-blue;
   }
 }

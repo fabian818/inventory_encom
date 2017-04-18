@@ -12,6 +12,7 @@
       'quantity': null,
       'category_id': null
     }
+    vm.edit_product = null;
     vm.products = [];
     vm.categories = [];
 
@@ -77,6 +78,55 @@
         })
 
       })
+    }
+
+    vm.select_product = function(product){
+      vm.edit_product = product;
+      $('.modal').css('display', 'flex');
+      console.log(vm.edit_product);
+    }
+
+    vm.close = function(){
+      $('.modal').css('display', 'none');
+    }
+
+    vm.update = function(){
+      ProductService.update(vm.edit_product).then(function(res){
+        console.log(res.data);
+        if (res.data.product !== null) {
+          updateProduct(res.data.product);
+          console.log(vm.products.find_by(vm.edit_product.id, 'id')[0]);
+          swal({
+            title: 'Actualizado correctamente',
+            type: 'success',
+            text: 'Se cerrará en 2 segundos...',
+            timer: 2000
+          }).then(
+          function () {},
+          function (dismiss) {
+            if (dismiss === 'timer') {
+              console.log('I was closed by the timer')
+            }
+          })
+        }
+      }, function(err){
+        console.log(err);
+        updateProduct(err.data.product);
+        errors = err.data.errors.reduce(function(err1, err2){
+          return err1 + '<br>' + err2;
+        });
+        console.log(errors);
+        swal('Error al agregar producto', errors, 'error');
+      })
+    }
+
+    function updateProduct(edit_product){
+      var product = vm.products.find_by(vm.edit_product.id, 'id')[0]
+      product.name = edit_product.name;
+      product.cost = edit_product.cost;
+      product.price = edit_product.price;
+      product.quantity = edit_product.quantity;
+      product.category_id = edit_product.category_id;
     }
 
     function resetInitialProduct(){

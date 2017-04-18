@@ -3,7 +3,7 @@ class Api::ProductsController < ApplicationController
     before_action :authenticate_api_user!
     before_action :set_product, only: [:update, :destroy]
     def index
-        @products = current_api_user.products
+        @products = current_api_user.products.order(created_at: :desc)
         @categories = current_api_user.categories
         # render json: {products: @products, categories: @categories}
     end
@@ -18,6 +18,12 @@ class Api::ProductsController < ApplicationController
     end
 
     def update
+        if @product.update(product_params)            
+            respond_with(@product)
+        else
+            product = Product.find(params[:id])
+            render json: {product: product, errors: @product.errors.values.flatten}, status: 400
+        end
     end
 
     def destroy

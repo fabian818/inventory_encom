@@ -61,3 +61,23 @@
     }
   }
 }
+.modal__container{
+  .title{
+    color: white;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    input{
+      width: 100%;
+    }
+    select{
+      height: 40px;
+      margin-bottom: 20px;
+    }
+    button{
+      height: 40px;
+    }
+  }
+}
